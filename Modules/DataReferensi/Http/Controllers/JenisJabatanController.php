@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\JenisJabatan; use Yajra\DataTables\Facades\DataTables; class JenisJabatanController extends Controller { public function index() { return view("\x64\x61\164\x61\x72\145\x66\145\162\145\x6e\x73\x69\72\72\152\x65\x6e\x69\163\x2d\152\x61\142\141\164\x61\x6e\x2e\151\x6e\x64\145\x78"); } public function update(Request $request) { if ($request->ajax()) { goto dsGIL; hCxdN: if (!isset($response["\x72\x65\163\x75\154\164\x73"])) { return $this->sendResponse(false, $response["\x6d\145\x73\x73\x61\x67\x65"]); } goto eMS5O; eMS5O: foreach ($response["\162\145\163\165\x6c\x74\x73"] as $data) { JenisJabatan::updateOrCreate(["\151\144" => $data["\x69\x64"]], $data); } goto EWUZV; dsGIL: $response = $this->getRequest("\x73\x69\141\163\156\x2d\x69\x6e\163\x74\x61\156\x73\x69\57\x72\145\146\145\162\145\x6e\163\151\x2f\152\x65\x6e\x69\163\55\x6a\141\142\x61\x74\x61\156"); goto hCxdN; EWUZV: return $this->sendResponse(true, "\x55\x70\x64\141\164\145\x20\144\141\x74\141\40\x62\145\x72\x68\x61\x73\151\x6c"); goto bDM5P; bDM5P: } } public function datatable(Request $request) { if ($request->ajax()) { $data = JenisJabatan::query(); return DataTables::eloquent($data)->toJson(); } } }

@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\FormasiMenpan\Exports; use Maatwebsite\Excel\Concerns\FromCollection; use Maatwebsite\Excel\Concerns\ShouldAutoSize; use Maatwebsite\Excel\Concerns\WithHeadings; use Maatwebsite\Excel\Concerns\WithMapping; use Maatwebsite\Excel\Concerns\WithStyles; use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet; use PhpOffice\PhpSpreadsheet\Cell\Cell; use PhpOffice\PhpSpreadsheet\Cell\DataType; use Maatwebsite\Excel\Concerns\WithCustomValueBinder; use Modules\FormasiMenpan\Entities\FmJfu; use PhpOffice\PhpSpreadsheet\Cell\DefaultValueBinder; class FmJfuExport extends DefaultValueBinder implements WithCustomValueBinder, FromCollection, WithHeadings, ShouldAutoSize, WithStyles, WithMapping { public function collection() { $data = FmJfu::orderBy("\x6a\141\x62\x61\x74\141\156")->get(); return collect($data); } public function map($data) : array { return ["\x69\144" => $data->id, "\152\x61\x62\x61\x74\141\x6e" => $data->jabatan]; } public function headings() : array { return ["\111\104", "\x4a\141\142\141\164\x61\156\x20\120\145\154\x61\153\x73\141\x6e\141"]; } public function styles(Worksheet $sheet) { return [1 => ["\x66\x6f\x6e\164" => ["\x62\x6f\154\144" => true]]]; } public function bindValue(Cell $cell, $value) { if (is_numeric($value)) { $cell->setValueExplicit($value, DataType::TYPE_STRING); return true; } return parent::bindValue($cell, $value); } }

@@ -1,0 +1,13 @@
+{
+    "name": "ProfileASN",
+    "alias": "profileasn",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ProfileASN\\Providers\\ProfileASNServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

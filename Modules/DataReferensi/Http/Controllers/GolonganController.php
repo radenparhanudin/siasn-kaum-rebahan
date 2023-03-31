@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\Golongan; use Yajra\DataTables\Facades\DataTables; class GolonganController extends Controller { public function index() { return view("\144\141\164\x61\162\x65\x66\x65\x72\145\156\x73\151\72\72\x67\x6f\154\x6f\x6e\x67\141\156\56\151\156\144\145\170"); } public function update(Request $request) { if ($request->ajax()) { goto Fvvbr; AWvt5: return $this->sendResponse(true, "\125\160\x64\141\164\145\x20\x64\141\164\141\40\142\x65\x72\x68\141\163\x69\154"); goto kNDjE; Fvvbr: $response = $this->getRequest("\x73\151\x61\163\x6e\55\151\x6e\163\x74\x61\156\x73\x69\57\162\x65\146\x65\162\145\x6e\x73\151\57\x67\157\154\157\x6e\147\141\156"); goto o5iHz; o5iHz: if (!isset($response["\162\145\x73\165\154\164\x73"])) { return $this->sendResponse(false, $response["\x6d\145\x73\x73\x61\147\x65"]); } goto QdXgR; QdXgR: foreach ($response["\x72\x65\x73\165\x6c\164\x73"] as $data) { Golongan::updateOrCreate(["\151\x64" => $data["\x69\x64"]], $data); } goto AWvt5; kNDjE: } } public function datatable(Request $request) { if ($request->ajax()) { $data = Golongan::query(); return DataTables::eloquent($data)->toJson(); } } }

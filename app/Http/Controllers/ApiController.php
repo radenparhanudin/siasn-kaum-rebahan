@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace App\Http\Controllers; use Illuminate\Http\Request; use Illuminate\Http\Response; class ApiController extends Controller { public function __construct() { $this->middleware("\x73\151\141\163\x6e\x5f\141\x75\164\x68"); } public function sendApiResponse($results, $http = Response::HTTP_OK, $message = null) { goto ZZSqs; ZZSqs: $response["\145\x72\162\157\162"] = $http != Response::HTTP_OK ? true : false; goto jfiB6; gA0Wo: return response()->json($response, $http); goto ujeIo; F0Y_F: if (count($results) > 0) { $response["\x72\157\167\163"] = number_format(count($results)); $response["\x72\x65\x73\x75\154\164\x73"] = $results; } goto gA0Wo; u90pd: if ($message != null) { $response["\155\x65\x73\163\141\x67\145"] = $message; } goto F0Y_F; jfiB6: $response["\163\x74\141\x74\165\x73"] = Response::$statusTexts[$http]; goto u90pd; ujeIo: } public function returnData($data, $keyword = null) { $message = is_null($keyword) ? "\x44\x61\x74\x61\40\x74\151\144\x61\153\40\144\x69\x74\x65\x6d\x75\x6b\x61\156" : "\120\145\x6e\143\x61\162\151\x61\x6e\x20\144\145\156\147\x61\156\x20\153\x61\x74\141\40\153\x75\156\143\x69\x20{$keyword}\40\x74\x69\144\x61\x6b\40\144\151\164\145\x6d\165\x6b\x61\x6e"; return count($data) > 0 ? $this->sendApiResponse($data) : $this->sendApiResponse($data, Response::HTTP_NOT_FOUND, $message); } }

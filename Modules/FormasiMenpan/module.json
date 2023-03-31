@@ -1,0 +1,13 @@
+{
+    "name": "FormasiMenpan",
+    "alias": "formasimenpan",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FormasiMenpan\\Providers\\FormasiMenpanServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

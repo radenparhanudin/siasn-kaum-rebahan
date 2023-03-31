@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateFmUnitKerjaUsulansTable extends Migration { public function up() { Schema::create("\x66\x6d\x5f\x75\156\x69\x74\x5f\153\145\162\152\x61\137\x75\163\165\x6c\141\x6e\163", function (Blueprint $table) { goto mrQCT; xZAn0: $table->text("\x6e\141\155\141")->nullable(); goto XI7yX; zpC0I: $table->timestamps(); goto JsLbk; XI7yX: $table->text("\141\x6c\x61\x6d\141\164")->nullable(); goto YqRdd; IVvWu: $table->string("\146\x6d\x5f\x75\156\151\x74\137\153\145\x72\152\x61\137\151\144")->nullable(); goto xZAn0; mrQCT: $table->string("\151\x64")->primary(); goto IVvWu; f17Ag: $table->text("\x6b\145\x74\145\x72\141\x6e\147\x61\x6e")->nullable(); goto Sfpc1; YqRdd: $table->string("\x74\145\x6c\x65\x70\157\x6e")->nullable(); goto f17Ag; Sfpc1: $table->enum("\x73\x74\x61\x74\x75\x73\x5f\165\163\x75\154\141\156", ["\x54\141\155\x62\141\150", "\110\141\x70\x75\x73", "\x55\142\x61\150", "\x55\x62\x61\150\x20\123\164\141\164\x75\163"])->default("\124\141\155\x62\x61\x68"); goto zpC0I; JsLbk: }); } public function down() { Schema::dropIfExists("\x66\x6d\137\x75\x6e\151\x74\x5f\x6b\x65\162\152\x61\x5f\165\x73\165\x6c\x61\x6e\163"); } }

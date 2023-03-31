@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\KedudukanHukum; use Yajra\DataTables\Facades\DataTables; class KedudukanHukumController extends Controller { public function index() { return view("\x64\141\x74\141\162\145\146\145\x72\145\x6e\163\151\72\72\x6b\145\x64\x75\x64\165\153\x61\x6e\x2d\x68\165\153\165\155\x2e\x69\x6e\144\145\170"); } public function update(Request $request) { if ($request->ajax()) { goto YjPw1; YjPw1: $response = $this->getRequest("\x73\x69\141\163\x6e\55\x69\156\x73\164\x61\x6e\x73\151\x2f\162\x65\146\x65\x72\x65\156\163\x69\57\x6b\145\144\165\144\x75\x6b\x61\x6e\55\150\x75\153\x75\155"); goto zU1rd; DCab3: return $this->sendResponse(true, "\125\x70\144\x61\164\x65\40\144\x61\x74\x61\40\142\145\x72\x68\x61\163\151\x6c"); goto IjuP1; zU1rd: if (!isset($response["\x72\x65\x73\x75\x6c\164\163"])) { return $this->sendResponse(false, $response["\x6d\145\163\163\141\147\x65"]); } goto USGxC; USGxC: foreach ($response["\162\145\163\165\x6c\164\x73"] as $data) { KedudukanHukum::updateOrCreate(["\151\144" => $data["\151\x64"]], $data); } goto DCab3; IjuP1: } } public function datatable(Request $request) { if ($request->ajax()) { $data = KedudukanHukum::query(); return DataTables::eloquent($data)->toJson(); } } }

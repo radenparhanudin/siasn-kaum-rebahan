@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\UnitOrganisasi; use Yajra\DataTables\Facades\DataTables; class UnitOrganisasiController extends Controller { public function index() { return view("\x64\x61\x74\141\162\x65\146\145\x72\x65\156\163\151\72\x3a\165\x6e\x69\164\x2d\157\x72\x67\141\156\x69\163\141\x73\151\x2e\x69\x6e\x64\145\170"); } public function update(Request $request) { if ($request->ajax()) { goto ABdh3; K1BGI: if (!isset($response["\x72\x65\x73\x75\x6c\164\x73"])) { return $this->sendResponse(false, $response["\155\145\x73\x73\x61\x67\145"]); } goto FJfAZ; ABdh3: $response = $this->getRequest("\x73\151\x61\163\x6e\x2d\x69\156\163\x74\x61\156\x73\x69\x2f\162\x65\146\x65\162\x65\156\163\151\57\x75\156\151\164\55\x6f\162\147\x61\x6e\x69\x73\x61\x73\x69"); goto K1BGI; efrL2: return $this->sendResponse(true, "\x55\x70\x64\x61\164\x65\40\144\x61\164\x61\x20\142\145\x72\150\x61\163\x69\154"); goto CYuk0; FJfAZ: foreach ($response["\x72\145\x73\165\154\164\x73"] as $data) { UnitOrganisasi::updateOrCreate(["\151\144" => $data["\151\144"]], $data); } goto efrL2; CYuk0: } } public function datatable(Request $request) { if ($request->ajax()) { $data = UnitOrganisasi::query(); return DataTables::eloquent($data)->toJson(); } } }

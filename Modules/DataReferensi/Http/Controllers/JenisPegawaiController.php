@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\JenisPegawai; use Yajra\DataTables\Facades\DataTables; class JenisPegawaiController extends Controller { public function index() { return view("\x64\141\x74\141\x72\x65\146\145\162\145\156\x73\x69\72\72\x6a\145\156\151\163\x2d\160\145\147\x61\x77\141\151\56\151\x6e\144\x65\170"); } public function update(Request $request) { if ($request->ajax()) { goto RAvQs; rvCjE: foreach ($response["\162\x65\x73\165\154\164\163"] as $data) { JenisPegawai::updateOrCreate(["\x69\x64" => $data["\x69\144"]], $data); } goto MNN_e; MNN_e: return $this->sendResponse(true, "\125\160\144\x61\x74\145\x20\144\x61\x74\x61\x20\142\145\162\150\141\163\151\x6c"); goto bPJjU; BuEy1: if (!isset($response["\x72\145\x73\x75\x6c\x74\x73"])) { return $this->sendResponse(false, $response["\x6d\x65\163\x73\x61\147\145"]); } goto rvCjE; RAvQs: $response = $this->getRequest("\163\151\x61\x73\156\55\x69\x6e\163\x74\x61\x6e\x73\x69\57\162\145\146\x65\x72\x65\156\163\151\57\152\145\x6e\x69\x73\x2d\160\145\x67\141\x77\x61\151"); goto BuEy1; bPJjU: } } public function datatable(Request $request) { if ($request->ajax()) { $data = JenisPegawai::query(); return DataTables::eloquent($data)->toJson(); } } }

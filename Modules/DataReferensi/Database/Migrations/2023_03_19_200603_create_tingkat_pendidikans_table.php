@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateTingkatPendidikansTable extends Migration { public function up() { Schema::create("\x74\151\156\147\153\141\164\137\160\145\156\144\151\144\151\x6b\x61\x6e\x73", function (Blueprint $table) { goto fnnsI; qkPqD: $table->char("\x67\157\x6c\x6f\x6e\x67\141\x6e\x5f\141\167\141\x6c\137\151\144", 2)->nullable(); goto t9SWd; IfNu1: $table->timestamps(); goto VWn_s; MCPg6: $table->string("\x6e\x61\x6d\x61")->nullable(); goto qkPqD; AHsZB: $table->char("\147\162\157\165\160\137\164\151\x6e\x67\153\141\x74\x5f\160\x65\156\x64\x69\x64\x69\x6b\141\x6e\137\151\x64", 2)->nullable(); goto mQqKM; mQqKM: $table->string("\x67\x72\x6f\165\160\x5f\x74\x69\156\147\x6b\x61\164\137\x70\x65\x6e\x64\151\x64\151\x6b\x61\x6e\x5f\x6e\x61\155\141")->nullable(); goto wCskG; wCskG: $table->char("\151\144\137\x6c\x61\x6d\x61", 2)->nullable(); goto IfNu1; fnnsI: $table->char("\x69\x64", 2)->primary(); goto MCPg6; t9SWd: $table->char("\x67\x6f\x6c\x6f\x6e\x67\141\x6e\x5f\155\141\153\x73\151\155\x61\154\x5f\151\x64", 2)->nullable(); goto AHsZB; VWn_s: }); } public function down() { Schema::dropIfExists("\164\x69\x6e\147\x6b\141\x74\x5f\x70\x65\156\144\x69\144\151\x6b\141\156\x73"); } }

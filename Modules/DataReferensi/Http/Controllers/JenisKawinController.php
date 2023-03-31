@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\JenisKawin; use Yajra\DataTables\Facades\DataTables; class JenisKawinController extends Controller { public function index() { return view("\144\141\x74\x61\x72\145\x66\x65\x72\145\x6e\x73\151\x3a\72\x6a\x65\156\x69\163\55\153\x61\167\x69\156\56\151\x6e\x64\145\170"); } public function update(Request $request) { if ($request->ajax()) { goto cqVid; zyRjP: if (!isset($response["\162\x65\163\x75\154\x74\x73"])) { return $this->sendResponse(false, $response["\x6d\145\x73\163\141\147\145"]); } goto djVd6; cqVid: $response = $this->getRequest("\163\151\x61\x73\156\x2d\x69\x6e\163\x74\141\156\163\x69\x2f\162\145\x66\145\x72\x65\x6e\x73\x69\57\x6a\x65\x6e\x69\163\55\x6b\141\167\151\x6e"); goto zyRjP; kubqx: return $this->sendResponse(true, "\125\160\x64\x61\x74\x65\x20\144\x61\x74\x61\x20\142\145\x72\150\x61\163\151\154"); goto xLcAz; djVd6: foreach ($response["\162\x65\163\165\x6c\164\163"] as $data) { JenisKawin::updateOrCreate(["\x69\144" => $data["\x69\x64"]], $data); } goto kubqx; xLcAz: } } public function datatable(Request $request) { if ($request->ajax()) { $data = JenisKawin::query(); return DataTables::eloquent($data)->toJson(); } } }

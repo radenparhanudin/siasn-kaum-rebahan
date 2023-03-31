@@ -1,0 +1,13 @@
+{
+    "name": "DataReferensi",
+    "alias": "datareferensi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\DataReferensi\\Providers\\DataReferensiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

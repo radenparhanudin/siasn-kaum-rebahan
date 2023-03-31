@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\FormasiMenpan\Http\Controllers; use Illuminate\Http\Request; use Maatwebsite\Excel\Facades\Excel; use Modules\FormasiMenpan\Entities\FmJft; use Modules\FormasiMenpan\Exports\FmJftExport; use Modules\FormasiMenpan\services\FmJftService; use Yajra\DataTables\Facades\DataTables; class FmJftController extends FormasiMenpanController { protected $fmJftService; public function __construct(FmJftService $fmJftService) { $this->fmJftService = $fmJftService; } public function index() { return view("\146\x6f\x72\155\141\x73\x69\155\145\x6e\x70\141\156\x3a\72\x6f\x72\x67\141\x6e\151\x73\x61\163\x69\x2e\162\145\146\145\162\x65\x6e\x73\x69\x2e\152\146\164\x2e\151\156\x64\145\x78"); } public function download(Request $request) { if ($request->ajax()) { $this->fmJftService->tarik_data($request); return $this->sendResponse(true, "\104\x6f\x77\156\154\157\141\x64\40\x6a\x61\142\141\x74\141\156\40\146\x75\156\147\x73\x69\x6f\156\x61\x6c\40\x62\145\x72\x68\141\163\151\x6c"); } } public function export() { return Excel::download(new FmJftExport(), "\x46\x6d\x4a\146\164\105\x78\x70\157\x72\x74\56\x78\x6c\163\x78"); } public function datatable(Request $request) { if ($request->ajax()) { $data = FmJft::query(); return DataTables::eloquent($data)->toJson(); } } }

@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\FormasiMenpan\Exports; use Maatwebsite\Excel\Concerns\FromCollection; use Maatwebsite\Excel\Concerns\ShouldAutoSize; use Maatwebsite\Excel\Concerns\WithHeadings; use Maatwebsite\Excel\Concerns\WithMapping; use Maatwebsite\Excel\Concerns\WithStyles; use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet; use PhpOffice\PhpSpreadsheet\Cell\Cell; use PhpOffice\PhpSpreadsheet\Cell\DataType; use Maatwebsite\Excel\Concerns\WithCustomValueBinder; use Modules\FormasiMenpan\Entities\FmPosisi; use PhpOffice\PhpSpreadsheet\Cell\DefaultValueBinder; class FmPosisiExport extends DefaultValueBinder implements WithCustomValueBinder, FromCollection, WithHeadings, ShouldAutoSize, WithStyles, WithMapping { public function collection() { $posisi = FmPosisi::orderBy("\x70\157\163\151\x73\151")->get(); return collect($posisi); } public function map($posisi) : array { return ["\x69\144" => $posisi->id, "\x70\157\163\x69\163\151" => $posisi->posisi]; } public function headings() : array { return ["\111\104", "\120\x6f\163\x69\163\151"]; } public function styles(Worksheet $sheet) { return [1 => ["\146\157\x6e\164" => ["\142\157\x6c\x64" => true]]]; } public function bindValue(Cell $cell, $value) { if (is_numeric($value)) { $cell->setValueExplicit($value, DataType::TYPE_STRING); return true; } return parent::bindValue($cell, $value); } }

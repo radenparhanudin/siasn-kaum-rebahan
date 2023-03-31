@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\StatusUsulan; use Yajra\DataTables\Facades\DataTables; class StatusUsulanController extends Controller { public function index() { return view("\x64\x61\x74\141\x72\145\146\145\162\x65\x6e\163\x69\72\72\x73\x74\x61\164\x75\x73\55\165\x73\165\154\141\156\x2e\x69\156\x64\145\x78"); } public function update(Request $request) { if ($request->ajax()) { goto pwkxb; pwkxb: $response = $this->getRequest("\163\151\x61\x73\x6e\55\151\x6e\x73\164\141\156\x73\151\57\x72\145\146\x65\x72\x65\x6e\x73\x69\x2f\x73\x74\141\164\165\163\55\x75\x73\x75\x6c\141\156"); goto dKtqW; O9u8F: return $this->sendResponse(true, "\x55\x70\144\141\164\x65\x20\x64\x61\x74\141\x20\142\x65\x72\x68\141\163\151\x6c"); goto owowh; dKtqW: if (!isset($response["\162\x65\163\x75\154\164\163"])) { return $this->sendResponse(false, $response["\155\145\163\x73\x61\x67\x65"]); } goto L5Xsy; L5Xsy: foreach ($response["\162\145\x73\165\154\164\163"] as $data) { StatusUsulan::updateOrCreate(["\x69\144" => $data["\151\x64"]], $data); } goto O9u8F; owowh: } } public function datatable(Request $request) { if ($request->ajax()) { $data = StatusUsulan::query(); return DataTables::eloquent($data)->toJson(); } } }

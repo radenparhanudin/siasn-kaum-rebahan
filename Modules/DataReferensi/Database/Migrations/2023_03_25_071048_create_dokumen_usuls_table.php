@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateDokumenUsulsTable extends Migration { public function up() { Schema::create("\144\x6f\x6b\165\155\x65\156\137\165\x73\x75\154\163", function (Blueprint $table) { goto GmxgO; O7bgh: $table->string("\146\151\x6c\145\x5f\164\171\x70\x65")->nullable(); goto GEU7E; RaQDU: $table->unsignedInteger("\163\x75\x62\137\x6c\x61\171\141\156\x61\x6e\137\x69\144"); goto MEuGi; MEuGi: $table->unsignedInteger("\144\x65\164\141\151\154\x5f\154\x61\x79\x61\156\141\x6e\x5f\x69\x64")->nullable(); goto h9nqy; MJuG7: $table->string("\152\145\x6e\151\163\x5f\x64\x6f\x6b\x75\155\x65\x6e")->nullable(); goto O7bgh; GmxgO: $table->id(); goto sngoJ; GEU7E: $table->string("\x6c\x69\156\153\137\x70\162\x6f\x73\145\163")->nullable(); goto ZdwA9; h9nqy: $table->timestamps(); goto RSCFN; ZdwA9: $table->boolean("\x6d\141\x6e\x64\141\x74\157\162\x79"); goto mWCXb; mWCXb: $table->unsignedInteger("\154\141\171\x61\156\x61\x6e\137\x69\144"); goto RaQDU; sngoJ: $table->text("\x64\157\143\x75\x6d\145\156\x74")->nullable(); goto MJuG7; RSCFN: }); } public function down() { Schema::dropIfExists("\x64\x6f\153\165\155\145\156\x5f\x75\163\165\x6c\x73"); } }

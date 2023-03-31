@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\Eselon; use Yajra\DataTables\Facades\DataTables; class EselonController extends Controller { public function index() { return view("\x64\x61\x74\x61\x72\x65\146\x65\x72\145\x6e\163\x69\72\72\145\x73\145\x6c\x6f\x6e\56\x69\x6e\144\x65\170"); } public function update(Request $request) { if ($request->ajax()) { goto KeCKN; wz0D3: return $this->sendResponse(true, "\125\160\x64\x61\x74\145\x20\x64\x61\x74\141\x20\142\x65\x72\x68\141\163\151\x6c"); goto y_juV; lKNdy: foreach ($response["\x72\145\163\165\154\x74\163"] as $data) { Eselon::updateOrCreate(["\151\144" => $data["\x69\144"]], $data); } goto wz0D3; KeCKN: $response = $this->getRequest("\163\151\141\163\x6e\55\151\156\163\x74\x61\x6e\163\151\x2f\162\145\146\x65\162\x65\156\163\x69\x2f\145\163\145\x6c\x6f\x6e"); goto OxK7k; OxK7k: if (!isset($response["\x72\x65\163\x75\x6c\x74\163"])) { return $this->sendResponse(false, $response["\x6d\145\x73\163\141\147\145"]); } goto lKNdy; y_juV: } } public function datatable(Request $request) { if ($request->ajax()) { $data = Eselon::query(); return DataTables::eloquent($data)->toJson(); } } }

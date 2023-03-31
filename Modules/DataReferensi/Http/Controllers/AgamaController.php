@@ -1,0 +1,7 @@
+<?php
+/*   _______________________________________
+    |  Dikembangkan oleh - Raden Parhanudin |
+    |    Whatsapp: https://6282342788059    |
+    |_______________________________________|
+*/
+ namespace Modules\DataReferensi\Http\Controllers; use App\Http\Controllers\Controller; use Illuminate\Http\Request; use Modules\DataReferensi\Entities\Agama; use Yajra\DataTables\Facades\DataTables; class AgamaController extends Controller { public function index() { return view("\x64\141\164\141\162\145\146\x65\x72\145\156\x73\151\72\x3a\x61\147\x61\155\141\x2e\x69\x6e\x64\145\170"); } public function update(Request $request) { if ($request->ajax()) { goto QuL1s; aCEmF: if (!isset($response["\x72\145\x73\165\x6c\x74\x73"])) { return $this->sendResponse(false, $response["\155\145\163\x73\141\x67\x65"]); } goto Vu2Su; QuL1s: $response = $this->getRequest("\x73\x69\x61\163\x6e\55\x69\156\163\164\141\156\163\151\x2f\x72\x65\x66\145\162\145\156\163\151\57\141\147\x61\x6d\x61"); goto aCEmF; Vu2Su: foreach ($response["\162\145\x73\165\x6c\164\x73"] as $data) { Agama::updateOrCreate(["\x69\x64" => $data["\151\x64"]], $data); } goto kuJmp; kuJmp: return $this->sendResponse(true, "\x55\x70\144\x61\164\145\x20\144\141\x74\x61\40\142\145\x72\150\x61\x73\151\154"); goto KTjTs; KTjTs: } } public function datatable(Request $request) { if ($request->ajax()) { $data = Agama::query(); return DataTables::eloquent($data)->toJson(); } } }
